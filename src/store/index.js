@@ -5,18 +5,18 @@ const todos = [];
 const todoReducer = (state = todos, action) => {
   switch (action.type) {
     case "ADD_TODO":
-     const newTask = {
+      const newTask = {
         id: action.payload.id,
         title: action.payload.title,
       };
-      console.log(newTask)
+      console.log(newTask);
       return [...state, newTask];
     case "DELETE_TODO":
       return state.filter((todo) => todo.id !== action.payload);
     default:
       return state;
   }
-}
+};
 
 const store = configureStore({
   reducer: {
@@ -25,8 +25,3 @@ const store = configureStore({
 });
 
 export default store;
-
-
-
-
-
